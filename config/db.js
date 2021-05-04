@@ -11,7 +11,7 @@ client.connect();
 
 // create tables: users, session
 const init =
-  "CREATE TABLE IF NOT EXISTS users(id SERIAL PRIMARY KEY, username VARCHAR UNIQUE, password VARCHAR, created TIMESTAMP); CREATE TABLE IF NOT EXISTS session(session_id VARCHAR, session_data VARCHAR, expire TIMESTAMP);";
+  "CREATE TABLE IF NOT EXISTS users(id SERIAL PRIMARY KEY, username VARCHAR UNIQUE, password VARCHAR, created TIMESTAMP); CREATE TABLE IF NOT EXISTS session(sid VARCHAR, sess VARCHAR, expires_at TIMESTAMP);";
 
 client
   .query(init)
