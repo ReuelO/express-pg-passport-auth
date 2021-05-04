@@ -3,6 +3,7 @@ const { Client } = require("pg");
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
+    require: true,
     rejectUnauthorized: false,
   },
 });
@@ -15,7 +16,7 @@ const init =
 
 client
   .query(init)
-  .then((data) => console.log("Tables created: users, session", data))
+  .then((data) => console.log("Tables created: users, session"))
   .catch((err) => console.error("Error executing query", err.stack));
 
 module.exports = client;
