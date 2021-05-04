@@ -13,7 +13,7 @@ const init =
 
 client
   .query(init)
-  .then((data) => console.log(data.rows[0]))
+  .then((data) => console.log("Tables created: users, session"))
   .catch((err) => console.error("Error executing query", err.stack));
 
 client.connect();
