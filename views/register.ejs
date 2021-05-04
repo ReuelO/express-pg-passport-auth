@@ -1,0 +1,80 @@
+<!-- Header -->
+<% include ./partials/header %>
+
+<!-- Navbar -->
+<% include ./partials/navbar %>
+
+<!-- Content -->
+<div class="d-flex flex-column">
+  <main role="main">
+    <div class="container mt-5">
+      <h3 class="text-center text-gray-800 pb-5">
+        <i class="fa fa-user-plus"></i> <%= heading %>
+      </h3>
+
+      <% if (message.length > 0) { %>
+      <div class="alert alert-danger py-2"><%= message %></div>
+      <% } %>
+
+      <form
+        class="form-signin"
+        action="/register"
+        method="POST"
+        oninput='confirm.setCustomValidity(confirm.value != password.value ? "Passwords do not match." : "")'
+      >
+        <div class="col mb-3">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              placeholder="Username"
+              autofocus
+              required
+            />
+            <label for="username">Username</label>
+          </div>
+        </div>
+
+        <div class="col mb-3">
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="pwd1"
+              placeholder="Password"
+              required
+            />
+            <label for="pwd1">Password</label>
+          </div>
+        </div>
+
+        <div class="col mb-3">
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              name="confirm"
+              id="pwd2"
+              placeholder="Confirm Password"
+              required
+            />
+            <label for="pwd2">Confirm Password</label>
+          </div>
+        </div>
+
+        <button type="submit" class="w-100 btn btn-success">Register</button>
+
+        <div class="row py-3">
+          <div class="col-6">
+            Already registered? <a href="/login">Login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<% include ./partials/footer %>
