@@ -1,0 +1,57 @@
+<!-- Header -->
+<% include ./partials/header %>
+
+<!-- Navbar -->
+<% include ./partials/navbar %>
+
+<!-- Content -->
+<div class="d-flex flex-column">
+  <main role="main">
+    <div class="container mt-5">
+      <h3 class="text-center text-gray-800 pb-5">
+        <i class="fa fa-user-check"></i> <%= heading %>
+      </h3>
+
+      <% if (message.length > 0) { %>
+      <div class="alert alert-danger py-2"><%= message %></div>
+      <% } %>
+
+      <form class="form-signin" action="/login" method="POST">
+        <div class="col mb-3">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              placeholder="Username"
+              autofocus
+              required
+            />
+            <label for="username">Username</label>
+          </div>
+        </div>
+
+        <div class="col mb-3">
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <label for="password">Password</label>
+          </div>
+        </div>
+
+        <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
+
+        <p class="mt-4">Not yet registered? <a href="/register">Register</a></p>
+      </form>
+    </div>
+  </main>
+</div>
+
+<% include ./partials/footer %>
