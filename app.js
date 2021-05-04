@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   session({
-    store: new pgSession({ conString: process.env.DATABASE_URL }),
+    store: new pgSession(),
     secret: "secret", // encryption key
     resave: false, // resave session variables only when changes are made
     saveUninitialized: false, // do not save empty values

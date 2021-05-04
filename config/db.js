@@ -15,7 +15,7 @@ const init =
 
 client
   .query(init)
-  .then((data) => console.log("Tables created: users, session"))
+  .then((data) => console.log("Tables created: users, session", data))
   .catch((err) => console.error("Error executing query", err.stack));
 
 module.exports = client;
