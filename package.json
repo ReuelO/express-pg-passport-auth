@@ -2,15 +2,9 @@
   "name": "postgres",
   "version": "0.0.0",
   "private": true,
-  "description": "This example is so cool.",
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "keywords": [
-    "example",
-    "heroku"
-  ],
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bluebird": "^3.7.2",
